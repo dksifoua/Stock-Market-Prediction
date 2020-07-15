@@ -28,3 +28,8 @@ Example:
 ```python
 > python ./download_data.py --tickers=MSFT,WMT,GS --year=2019 --token=$API_TOKEN --path=./data --freq=1min
 ```
+
+# References
+- Arévalo, A., Niño, J., Hernández, G. and Sandoval, J., 2020. High-Frequency Trading Strategy Based On Deep Neural Networks.
+
+- Zhou, X., Pan, Z., Hu, G., Tang, S. and Zhao, C., 2018. Stock Market Prediction on High-Frequency Data Using Generative Adversarial Nets. Mathematical Problems in Engineering, 2018, pp.1-11.
