@@ -1,6 +1,6 @@
 # Stock Market Prediction
 
-# Install packages
+## Install packages
 
 ```shell
 > pip install -r requirements.txt
