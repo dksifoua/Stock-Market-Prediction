@@ -1,5 +1,11 @@
 # Stock Market Prediction
 
+# Install packages
+
+```shell
+> pip install -r requirements.txt
+```
+
 ## Download data
 
 ```python
