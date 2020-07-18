@@ -75,10 +75,11 @@ def add_trend_indicators(data):
     df['ema_60'] = ta.trend.sma_indicator(close=df.close, n=60)
     # Trix (TRIX)
     df['trix'] = ta.trend.trix(close=df.close)
+    return df
 
 def add_technical_indicators(data):
     data = add_momentum_indicators(data)
     data = add_volume_indicators(data)
     data = add_volatility_indicators(data)
     data = add_trend_indicators(data)
-    return df.dropna().reset_index(drop=True)
+    return data.dropna().reset_index(drop=True)
