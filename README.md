@@ -12,7 +12,7 @@
 
 ```python
 > export API_TOKEN=[Your Tiingo API token here]
-> python ./download_data.py --help
+> python ./script/download_data.py --help
 ```
 
 ```
@@ -35,7 +35,12 @@ optional arguments:
 Example:
 
 ```python
-> python ./download_data.py --tickers=MSFT,WMT,GS --year=2019 --token=$API_TOKEN --path=./data --freq=1min
+> python ./script/download_data.py \
+    --tickers=AAPL,MSFT,WMT,AMZN,GOOG,BLK,JPM,GS,NFLX,KO \
+    --year=2019 \
+    --token=$API_TOKEN \
+    --path=./data \
+    --freq=1min
 ```
 
 # References

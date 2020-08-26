@@ -1,10 +1,8 @@
-import pandas as pd
 import ta
+
 
 def add_momentum_indicators(data):
     df = data.copy()
-    # Kaufman’s Adaptive Moving Average (KAMA)
-    df['kama'] = ta.momentum.kama(close=df.close)
     # Rate of Change (ROC)
     df['roc'] = ta.momentum.roc(close=df.close)
     # Relative Strength Index (RSI)
@@ -12,6 +10,7 @@ def add_momentum_indicators(data):
     # True strength index (TSI)
     df['tsi'] = ta.momentum.tsi(close=df.close)
     return df
+
 
 def add_volume_indicators(data):
     df = data.copy()
@@ -22,12 +21,15 @@ def add_volume_indicators(data):
     # Force Index (FI)
     df['fi'] = ta.volume.force_index(close=df.close, volume=df.volume)
     # Negative Volume Index (NVI)
-    df['nvi'] = ta.volume.negative_volume_index(close=df.close, volume=df.volume)
+    df['nvi'] = ta.volume.negative_volume_index(close=df.close,
+                                                volume=df.volume)
     return df
+
 
 def add_volatility_indicators(data):
     df = data.copy()
     bb_indicator = ta.volatility.BollingerBands(close=df.close)
+
     # Add Bollinger Bands features
     df['bb_bbm'] = bb_indicator.bollinger_mavg()
     df['bb_bbh'] = bb_indicator.bollinger_hband()
@@ -38,15 +40,15 @@ def add_volatility_indicators(data):
     df['bb_bbli'] = bb_indicator.bollinger_lband_indicator()
     # Add Width Size Bollinger Bands
     df['bb_bbw'] = bb_indicator.bollinger_wband()
-    # Add Percentage Bollinger Bands
-    df['bb_bbp'] = bb_indicator.bollinger_pband()
     return df
+
 
 def add_trend_indicators(data):
     df = data.copy()
     aroon_indicator = ta.trend.AroonIndicator(close=df.close)
     macd_indicator = ta.trend.MACD(close=df.close)
     kst_indicator = ta.trend.KSTIndicator(close=df.close)
+
     # Aroon Down Channel
     df['aroon_down'] = aroon_indicator.aroon_down()
     # Aroon Indicator
@@ -76,10 +78,3 @@ def add_trend_indicators(data):
     # Trix (TRIX)
     df['trix'] = ta.trend.trix(close=df.close)
     return df
-
-def add_technical_indicators(data):
-    data = add_momentum_indicators(data)
-    data = add_volume_indicators(data)
-    data = add_volatility_indicators(data)
-    data = add_trend_indicators(data)
-    return data.dropna().reset_index(drop=True)
