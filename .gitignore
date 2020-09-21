@@ -1,4 +1,3 @@
-set_env.sh
+.idea/
 .ipynb_checkpoints/
 __pycache__/
-.github/
