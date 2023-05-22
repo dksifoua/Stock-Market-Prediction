@@ -1,6 +1,6 @@
 ta==0.5.25
 
 tqdm==4.48.2
-requests==2.23.0
+requests==2.31.0
 pandas==1.1.1
 numpy==1.19.1
