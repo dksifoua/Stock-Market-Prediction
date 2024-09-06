@@ -3,7 +3,7 @@ import tqdm
 import argparse
 import requests
 import pandas as pd
-from src.configs.data import DataConfig
+from stock_market_prediction.configs.data import DataConfig
 
 
 def get_months_dates(year):

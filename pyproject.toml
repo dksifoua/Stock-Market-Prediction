@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "stock-market-prediction"
+version = "0.1.0"
+description = "Stock Market Prediction on High-Frequency Data Using soft computing based AI models"
+authors = ["dksifoua <dimitri.sifoua@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
